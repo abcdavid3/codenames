@@ -1,8 +1,21 @@
-tile {
-    border: 5px solid #000000;
+.tile {
+    border: 2px solid #000000;
     font: Roboto;
+    margin: 5px;
+    height: 100px;
+    width: 200px;
+    text-align: center;
 }
 
-red {
+.red {
     color: red;
+}
+
+.grid {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-content: center;
+    align-items: center;
 }
