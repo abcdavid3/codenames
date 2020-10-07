@@ -221,14 +221,34 @@ export class CodetileComponent implements OnInit {
     console.log(this.gameCardTitles)
     this.createCards(this.gameCardTitles);
 }
-
+  getRandomInt(min, max) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min) + min); //The maximum is exclusive and the minimum is inclusive
+}
   createCards(words) {
+    var redTeam = 8;
+    var blueTeam = 8;
+    var blackTeam = 1;
     for (let i = 0; i < words.length; i++) {
       this.gameCards[i] = {
-        team: "red",
+        team: "",
         word: words[i],
         selected: false
       }
+        var number = this.getRandomInt(0, 4);
+        if (number == 0 && redTeam > 0) {
+          redTeam = redTeam - 1;
+          this.gameCards[i].team = "red";
+        } else if (number == 1 && blueTeam > 0) {
+          blueTeam = blueTeam - 1;
+          this.gameCards[i].team = "blue";
+        } else if (number == 1 && blackTeam > 0) {
+          blackTeam = blackTeam - 1;
+          this.gameCards[i].team = "black";
+        } else {
+          this.gameCards[i].team = "neutral";
+        } 
     }
     console.log(this.gameCards);
 }

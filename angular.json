@@ -127,5 +127,8 @@
       }
     }
   },
-  "defaultProject": "codenames"
+  "defaultProject": "codenames",
+  "cli": {
+    "analytics": false
+  }
 }
